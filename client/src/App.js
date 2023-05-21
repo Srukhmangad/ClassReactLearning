@@ -2,8 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import Hello from './components/Hello';
 import Header from './components/Header';
+import Contactus from './components/Contactus';
 
 function App() {
+  const contactdetails ={
+    name: 'Sumit',
+    phone: '9876543210',
+    email: 'sumitrukhmangad@outlook.com'
+  }
+  const salutation = ['Namaste','Hello','Hola','Bonjour']
   return (
     <div className="App">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -43,8 +50,7 @@ function App() {
   </div>
 </nav>
       <Header></Header>
-      <Hello></Hello>
-      <p style={{color:"rgb(98,12,107)",fontSize:"40px"}}>Contact Us</p>
+      <Contactus name={contactdetails.name} phone={contactdetails.phone} email={contactdetails.email} salutation={salutation}></Contactus>
     </div>
   );
 }
