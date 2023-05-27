@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 import Hello from './components/Hello';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -11,7 +12,32 @@ function App() {
     name: 'Sumit',
     phone: '9876543210',
     email: 'sumitrukhmangad@outlook.com'
+    //States
+    //initials
+    //hooks: resposible for managing state of our webpage is (UseState)
+    //let[statevariable, statefunction]=useState(deafultState/ initialState)
+    //statevariable is responsible for storing the state of your component
+    //statefunction
   }
+    const [name,setName]=useState('HeroVired');
+    const [num,setNum]=useState(0);
+    const [decnum,setDecNum]=useState(100);
+
+    function HandleClick(){
+      if(name=='HeroVired'){setName('Hero')}
+      else{setName('HeroVired')}
+    }
+    
+    function RevertName(){
+      setName('HeroVired')
+    }
+    function Increment(){
+      setNum(num+1)
+    }
+    function Decrement(){
+      setDecNum(decnum-1)
+    }
+  
   let details= '@Copyright 2023'
   let language= 'English, Hindi, Marathi'
   let aboutus='About Us'
@@ -22,7 +48,14 @@ function App() {
       
       <Header></Header>
       <Contactus name={contactdetails.name} phone={contactdetails.phone} email={contactdetails.email} salutation={salutation[2]}></Contactus>
-
+      <div>Welcome to {name}</div>
+      <button onClick={HandleClick}>Click Here</button><br></br><br></br>
+      <button onClick={Increment}>Click Here to increment the number</button>
+      <div>Number of clicks: {num}</div><br></br><br></br>
+      <button onClick={Decrement}>Click Here to decrement the number</button>
+      <div>{decnum}</div>
+      
+      
       <Footer details={details} language={language} aboutus={aboutus}/>
     </div>
   );
