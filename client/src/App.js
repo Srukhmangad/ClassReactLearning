@@ -21,7 +21,7 @@ function App() {
   }
     const [name,setName]=useState('HeroVired');
     const [num,setNum]=useState(0);
-    const [decnum,setDecNum]=useState(100);
+    
 
     function HandleClick(){
       if(name=='HeroVired'){setName('Hero')}
@@ -35,7 +35,8 @@ function App() {
       setNum(num+1)
     }
     function Decrement(){
-      setDecNum(decnum-1)
+      if(num>0)
+      setNum(num-1)
     }
   
   let details= '@Copyright 2023'
@@ -50,10 +51,10 @@ function App() {
       <Contactus name={contactdetails.name} phone={contactdetails.phone} email={contactdetails.email} salutation={salutation[2]}></Contactus>
       <div>Welcome to {name}</div>
       <button onClick={HandleClick}>Click Here</button><br></br><br></br>
-      <button onClick={Increment}>Click Here to increment the number</button>
-      <div>Number of clicks: {num}</div><br></br><br></br>
+      <button onClick={Increment}>Click Here to increment the number</button><br></br>
+      <div>Number: {num}</div>
       <button onClick={Decrement}>Click Here to decrement the number</button>
-      <div>{decnum}</div>
+      
       
       
       <Footer details={details} language={language} aboutus={aboutus}/>
