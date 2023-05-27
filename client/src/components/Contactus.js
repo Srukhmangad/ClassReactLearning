@@ -5,9 +5,10 @@ export default function Contactus(props){
     console.log(props)
     return(
         <div>
-            Name: {props.name}<br></br>
+            {props.salutation} Name: {props.name}<br></br>
             Phone no.: {props.phone} <br></br>
             Email: {props.email}<br></br>
+            
         </div>
     )
 }
