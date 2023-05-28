@@ -1,10 +1,17 @@
 import react from 'react'
 import './Header.css'
 
-function Header(){
+function Header({name, setName}){
+    
+    function HandleClick(){
+        if(name=='HeroVired'){setName('Hero')}
+        else{setName('HeroVired')}
+      }
+
     return(
         <div>
-            <h1 className="heading">Header</h1>
+            <div>Welcome to {name}</div>
+            <button onClick={HandleClick}>Click Here</button>
         </div>
     )
 }

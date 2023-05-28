@@ -47,17 +47,16 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       
-      <Header></Header>
+      <Header name={name} setName={setName}></Header>
       <Contactus name={contactdetails.name} phone={contactdetails.phone} email={contactdetails.email} salutation={salutation[2]}></Contactus>
-      <div>Welcome to {name}</div>
-      <button onClick={HandleClick}>Click Here</button><br></br><br></br>
+      <br></br><br></br>
       <button onClick={Increment}>Click Here to increment the number</button><br></br>
       <div>Number: {num}</div>
       <button onClick={Decrement}>Click Here to decrement the number</button>
       
       
       
-      <Footer details={details} language={language} aboutus={aboutus}/>
+      <Footer details={details} language={language} aboutus={aboutus} name={name}/>
     </div>
   );
 }
