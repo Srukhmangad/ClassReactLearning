@@ -21,6 +21,7 @@ function App() {
   }
     const [name,setName]=useState('HeroVired');
     const [num,setNum]=useState(0);
+    const [showTitlePage,setShowTitlePage]=useState(true)
     
 
     function HandleClick(){
@@ -47,7 +48,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       
-      <Header name={name} setName={setName}></Header>
+      <Header name={name} setName={setName} showTitlePage={showTitlePage} setShowTitlePage={setShowTitlePage}></Header>
       <Contactus name={contactdetails.name} phone={contactdetails.phone} email={contactdetails.email} salutation={salutation[2]}></Contactus>
       <br></br><br></br>
       <button onClick={Increment}>Click Here to increment the number</button><br></br>
